@@ -1,14 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+:root {
+    --base-accent: #32bb8d;
+    --base-background: #131313;
+    --base-textcolor: #ededed;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background-color: #131313;
+    background-color: var(--base-background);
+    color: var(--base-textcolor);
 }
 
 .header {
@@ -17,7 +23,7 @@ body {
     left: 0;
     width: 100%;
     padding: 10px 10%;
-    background-color: rgba(0, 0, 0, 0.11);
+    background-color: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,8 +38,9 @@ body {
 }
 
 .navbar a {
+    box-sizing: border-box;
     font-size: 18px;
-    color: #ededed;
+    color: var(--base-textcolor);
     font-family: sans-serif;
     text-decoration: none;
     font-weight: 500;
@@ -44,7 +51,64 @@ body {
 }
 
 .navbar a:hover,
-    .navbar a:active {
-        color: #8C00FF;
+.navbar a.active {
+        color: var(--base-accent);
         transform: translateY(-5px);
-    }
+}
+
+.home  {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+.home-content {   
+    max-width: 600px;
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+
+}
+.home-content h3 { 
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--base-accent);
+}
+
+.home-content p {
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+.home-content .btn-box {
+    display: flex;
+    justify-content: space-between;
+    width: 345px;
+    height: 50px;
+
+    color: #ededed;
+}
+
+.btn-box a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background-color: var(--base-accent);
+    border: 2px solid var(--base-accent);
+    border-radius: 8px;
+    color: var(--base-textcolor);
+    font-size: 19px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    
+}
+
+.btn-box a:nth-child(2) {
+    background-color: transparent;
+    color: var(--base-accent);
+}
