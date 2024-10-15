@@ -3,11 +3,16 @@
 
 @font-face {
     font-family: 'CustomHeading';
-    src: url('./fonts/SFAtarianSystem.ttf') format('embedded-opentype'), /* Internet Explorer */
-         url('./fonts/SFAtarianSystem.ttf') format('woff2'),             /* Super Modern Browsers */
-         url('./fonts/SFAtarianSystem.ttf') format('woff'),              /* Pretty Modern Browsers */
-         url('./fonts/SFAtarianSystem.ttf') format('truetype'),          /* Safari, Android, iOS */
-         url('./fonts/SFAtarianSystem.ttf') format('svg');               /* Legacy iOS */
+    src: url('./fonts/SFAtarianSystem.ttf') format('embedded-opentype'),
+        /* Internet Explorer */
+        url('./fonts/SFAtarianSystem.ttf') format('woff2'),
+        /* Super Modern Browsers */
+        url('./fonts/SFAtarianSystem.ttf') format('woff'),
+        /* Pretty Modern Browsers */
+        url('./fonts/SFAtarianSystem.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('./fonts/SFAtarianSystem.ttf') format('svg');
+    /* Legacy iOS */
 }
 
 * {
@@ -20,13 +25,13 @@
 
 :root {
     --base-accent: #fb3f3f;
-    --base-background: #131313; 
+    --base-background: #131313;
     --base-textcolor: #ededed;
     --base-font: ;
     --base-font-italic: ;
-    --base-font-extra-bold: '/fonts/gotham_black.otf'; 
+    --base-font-extra-bold: '/fonts/gotham_black.otf';
     --base-font-bold: ;
-    --base-font-bold-italic: ; 
+    --base-font-bold-italic: ;
 }
 
 
@@ -37,11 +42,12 @@ html {
 .material-icons-round {
     vertical-align: middle;
     display: inline-flex;
-    font-size: 22px;
+    font-size: 20px;
     float: right;
     margin-left: 10px;
-    
-  }
+    justify-content: center;
+    align-items: center;
+}
 
 
 body {
@@ -69,10 +75,14 @@ body {
     text-decoration-color: var(--base-textcolor);
     font-weight: 700;
     font-family: gotham-black;
+    transition: none;
+    pointer-events: none;
 }
+
 
 .navbar a {
     box-sizing: border-box;
+    display: inline-block;
     font-size: 15px;
     color: var(--base-textcolor);
     font-family: gotham-medium;
@@ -80,35 +90,70 @@ body {
     text-decoration: none;
     font-weight: 510;
     margin-left: 35px;
-    display: inline-block;
     transition: .3s;
     transition: transform 250ms;
-}
-
-.navbar a:hover,
-.navbar a.active {
-        color: var(--base-accent);
-        transform: translateY(-5px);
-        
 }
 #navbar ul {
     list-style: none;
     margin:0;
-  
-  }
-  #navbar ul a {
+    padding: 0;
+}
+li {
     display: inline-block;
-      display:inline;
-      margin: 20px;
+    text-align: center;
+    padding: 2px 2px;
   }
+/* Underline styles */
+a {
+    box-sizing: content-box;
+    display: inline-block;
+    position: relative;
+    padding: 0.2em 0;
+}
 
-.home  {
+/* Fade in */
+a::after {
+    content: '';
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.13em;
+    background-color: var(--base-accent);
+    opacity: 0;
+    transition: opacity 100ms, transform 300ms;
+}
+
+a:hover::after,
+a:focus::after {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Slide in */
+a {
+    overflow: hidden;
+}
+a::after {
+    opacity: 1;
+    transform: translate3d(-101%, 0, 0);
+}
+
+a:hover::after,
+a:focus::after {
+    transform: translate3d(0, 0, 0);
+}
+
+/* main page content */
+.home {
     height: 100vh;
     display: flex;
     align-items: center;
     padding: 0 10%;
 }
-.home-content {   
+
+.home-content {
     max-width: 600px;
 }
 
@@ -117,7 +162,8 @@ body {
     font-weight: 700;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.home-content h3 { 
+
+.home-content h3 {
     font-size: 32px;
     font-weight: 700;
     color: var(--base-accent);
@@ -129,13 +175,13 @@ body {
     font-weight: 800;
     margin: 20px 0;
     background: rgb(255, 255, 255);
-    background: linear-gradient(61deg, #fb3f3f 0%, rgba(252,70,107,1) 100%);
+    background: linear-gradient(to left, #e53ffb 0%, rgb(255, 255, 255) 100%);
     color: transparent;
     background-clip: text;
-   
-    
 
-   /* color: var(--base-accent); */
+
+
+    /* color: var(--base-accent); */
 }
 
 .home-content .btn-box {
@@ -161,7 +207,7 @@ body {
     text-decoration: none;
     font-weight: 600;
     letter-spacing: 1px;
-    
+
 }
 
 .btn-box a:nth-child(2) {
