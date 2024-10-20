@@ -15,15 +15,33 @@
   /* Legacy iOS */
 }
 
-.root {
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --hover-color: #a846a3;
+
   
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: gotham-light;
+  margin: 0;
+  padding: 0;
 }
 
 /* adjust logo style */
 .top-navigation a.logo {
   font-size: 28px;
+  color: var(--text-color);
   text-decoration: underline;
   font-family: gotham-black;
+  font-weight: 10;
+  font-style: italic;
   vertical-align: center;
 }
 
@@ -43,13 +61,15 @@
   position: relative;
   vertical-align: middle;
   line-height: 20px;
+  width: 100%;
+  z-index: 100;
 }
 
 /* Style the links inside the navigation bar */
 .top-navigation a {
 
   float: left;
-  color: #000000;
+  color: var(--text-color);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -63,19 +83,66 @@
 /* Change the color of links on hover */
 .top-navigation a.hover:hover {
   transform: translateY(-5px);
-  color: rgb(96, 70, 168);
+  color: var(--hover-color);
 
 }
 
 /* Create a right-aligned (split) link inside the navigation bar */
 .top-navigation a.split {
   float: right;
-  color: rgb(0, 0, 0);
+  color: var(--text-color);
 }
 
 /* don't forget to animate the split */
 .top-navigation a.split:hover {
   transform: translateY(-5px);
-  color: rgb(96, 70, 168);
+  color: var(--hover-color);
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+  background-color: #000000;
+  color: var(--background-color);
+  justify-content: center;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 3rem;    /* Footer height */
+}
+
+.home {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding:0 15%;
+  padding-top: 150px;
+  float: left;
+}
+
+.home-image {
+  display: flex;
+  align-items: center;
+  padding: 0 15%;
+  text-align: center;
+  padding: 25px;
+  width:auto;
+}
+.home-content {
+  max-width: 600px;
+}
+
+.home-content h1 {
+  font-size: 46px ;
+  font-family: gotham-medium;
+  font-weight: 700;
 }
 
