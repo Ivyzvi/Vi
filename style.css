@@ -16,10 +16,11 @@
 }
 
 :root {
-  --background-color: #000000;
-  --accent-background: #aa5a5a;
+  --background-color: #101014;
+  --alt-background-color: #22222b;
+  --accent-background-color: #24baff;
   --text-color: #ffffff;
-  --hover-color: #ff0000;
+  --hover-color: #24baff;
   
 }
 
@@ -57,12 +58,15 @@ body {
   list-style-type: none;
   font-family: gotham-light;
   font-size: 24px;
-  
+  color: var(--accent-background-color);
 }
 
 /*style top nav to align everything */
 .top-navigation {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   vertical-align: middle;
   line-height: 20px;
   width: 100%;
@@ -86,20 +90,26 @@ body {
 /* Change the color of links on hover */
 .top-navigation a.hover:hover {
   color: var(--hover-color);
-  transform: translateY(-5px);
+  transform: translateY(-3px);
 }
 
 /* Create a right-aligned (split) link inside the navigation bar */
 .top-navigation a.split {
   float: right;
   color: var(--text-color);
+  transition: color 0.5s ease, transform 0.5s ease;
 }
 
 /* don't forget to animate the split */
 .top-navigation a.split:hover {
-  transform: translateY(-5px);
+  color: var(--hover-color);
+  transform: translateY(-3px);
+}
 
-  
+.svg-logo {
+  width: 30px;
+  height: auto;
+  fill: #ffffff; /* this sets the color */
 }
 
 #footer {
