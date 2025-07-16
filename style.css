@@ -72,16 +72,6 @@ body {
   width: 100%;
   z-index: 100;
 }
-/*
-.top-navigation {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  height: 60px;
-  padding: 0 20px;
-} 
-*/
 
 /* Style the links inside the navigation bar */
 
@@ -131,9 +121,9 @@ body {
   content: "";
   position: absolute;
   left: 50%;               /* start at horizontal center */
-  bottom: -4px;            /* adjust vertical position */
+  bottom: -5px;            /* adjust vertical position */
   width: 80%;             /* full width of text */
-  height: 3px;
+  height: 2.5px;
   border-radius: 2px;
   background-color: currentColor;
   opacity: 0;
