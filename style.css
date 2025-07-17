@@ -21,7 +21,7 @@
   --accent-background-color: #24baff;
   --text-color: #ffffff;
   --hover-color: #24baff;
-  
+  --navbar-height: 40px;
 }
 
 html {
@@ -70,7 +70,7 @@ body {
   vertical-align: middle;
   line-height: 20px;
   width: 100%;
-  z-index: 100;
+  z-index: 1000;
 }
 
 /* Style the links inside the navigation bar */
@@ -80,7 +80,8 @@ body {
   float: left;
   align-items: center;
   justify-content: center;
-
+  position: relative;
+  height: 40px;
   color: var(--text-color);
   text-align: center;
   padding: 0px 20px;
@@ -185,31 +186,53 @@ body {
   padding-bottom: 3rem;    /* Footer height */
 }
 
-.home {
-  height: 50vh;
+
+.scroll-wrapper {
+  margin-top: 60px; /* Adjust this to match navbar height */
+  background: white;
+  overflow: hidden;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  border-top: 5px solid white;     /* Fake top spacing */
+  border-bottom: 5px solid white;  /* Fake bottom spacing */
+  box-sizing: content-box;
+}
+
+.angled-strip {
+  display: flex;
+  gap: 3px;                     
+  padding-left: 0;
+  width: max-content;          
+  animation: scrollGallery 40s linear infinite;
+}
+
+@keyframes scrollGallery {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-250%);
+  }
+}
+
+.panel {
+  height: 100%;
+  flex: 0 0 auto;
+  margin-left: -45px;
+  clip-path: polygon(6% 0%, 100% 0%, 94% 100%, 0% 100%);
+  background: white;
+  overflow: hidden;
+}
+.image-wrap {
   width: 100%;
-  display: flex;
-  align-items: center;
-  padding:0 15%;
-  padding-top: 150px;
-  float: left;
+  height: 100%;
+  overflow: hidden;
 }
 
-.home-image {
-  display: flex;
-  align-items: center;
-  padding: 0 15%;
-  text-align: center;
-  padding: 25px;
-  width:auto;
+.image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
-.home-content {
-  max-width: 600px;
-}
-
-.home-content h1 {
-  font-size: 46px ;
-  font-family: gotham-medium;
-  font-weight: 700;
-}
-
