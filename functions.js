@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "Store/Images/artworks//intro1.png",
     "Store/Images/artworks/intro2.png",
     "Store/Images/artworks/intro3.png",
-    "Store/Images/artworks/intro4.png"
   ];
 
   // Shuffle imagePaths randomly
