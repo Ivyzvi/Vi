@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const imagePaths = [
-    "Store/artworks//intro1.png",
-    "Store/artworks/intro2.png",
-    "Store/artworks/intro3.png",
-    "Store/artworks/intro4.png"
+    "Store/Images/artworks//intro1.png",
+    "Store/Images/artworks/intro2.png",
+    "Store/Images/artworks/intro3.png",
+    "Store/Images/artworks/intro4.png"
   ];
 
   // Shuffle imagePaths randomly
